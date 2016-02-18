@@ -1,13 +1,21 @@
 # To get started with security, check out the documentation:
 # http://symfony.com/doc/current/book/security.html
+
 security:
+
     encoders:
-        Eni\DemoBundle\Entity\Utilisateur: plaintext
+        Core\UserBundle\Entity\User:
+#         Vinologie\UserBundle\Entity\User:
+            algorithm: sha256
+            iterations: 200
+            encode_as_base64: false
+
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
         my_bdd:
             entity:
-                class: Vinologie\UserBundle\Entity\User
+                class: Core\UserBundle\Entity\User
+#                class: Vinologie\UserBundle\Entity\User
                 property: username
 
     firewalls:

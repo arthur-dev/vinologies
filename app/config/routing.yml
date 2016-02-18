@@ -1,3 +1,4 @@
+############# Bundles #################
 vinologie_service:
     resource: "@VinologieServiceBundle/Resources/config/routing.yml"
     prefix:   /
@@ -25,5 +26,17 @@ core_user:
 app_front:
     resource: "@AppFrontBundle/Resources/config/routing.yml"
     prefix:   /
+
+############# Security #################
+eni_demo:
+    resource: "@CoreUserBundle/Controller/"
+
+
+login_check:
+    path: /login_check
+    defaults: { _controller: CoreUserBundle:Security:loginCheck}
+
+logout:
+    path: /logout
 
 

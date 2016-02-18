@@ -29,9 +29,30 @@ class User extends RichResource implements UserInterface
      */
     protected $password;
 
+    /**
+     * @var string
+     */
+    protected $salt;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->salt=uniqid(rand(),true);
+    }
+
+    /**
+     * @param $username
+     */
+    public function SetUsername($username)
+    {
+        $this->username = $username;
+    }
+
+
     public function getRoles()
     {
         // TODO: Implement getRoles() method.
+        return array('ROLE_USER');
     }
 
     public function getPassword()
@@ -42,7 +63,7 @@ class User extends RichResource implements UserInterface
 
     public function getSalt()
     {
-        // TODO: Implement getSalt() method.
+        return $this->salt;
     }
 
     public function getUsername()
@@ -109,7 +130,7 @@ class User extends RichResource implements UserInterface
 
     public function setPassword($password)
     {
-        // TODO: Implement setPassword() method.
+        $this->password = $password;
     }
 
     public function setEnabled($boolean)
@@ -181,6 +202,7 @@ class User extends RichResource implements UserInterface
     {
         // TODO: Implement isEnabled() method.
     }
+
 
 
 }

@@ -39,6 +39,7 @@ class RichResource extends Resource implements RichResourceInterface
     public function __construct()
     {
         $this->deleted = false;
+        $this->updateTimestamps();
     }
 
     /**
@@ -56,7 +57,7 @@ class RichResource extends Resource implements RichResourceInterface
     public function setDeleted($deleted)
     {
         $this->deleted = $deleted;
-        $this->updateTimestamps();
+
     }
 
     /**
