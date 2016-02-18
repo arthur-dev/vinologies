@@ -1,6 +1,7 @@
 Vinologie\ServiceBundle\Entity\Degustation:
     type: entity
     repositoryClass: Vinologie\ServiceBundle\Repository\DegustationRepository
+    table: vinologie_service_degustation
     fields:
         hours:
             type: datetime
