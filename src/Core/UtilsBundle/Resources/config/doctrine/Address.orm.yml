@@ -1,5 +1,6 @@
 Core\UtilsBundle\Entity\Address:
-    type: entity
+    type: mappedSuperclass
+#    type: entity
     table:  core_utils_address
 #    repositoryClass: Core\CustomerBundle\Repository\AddressRepository
     fields:

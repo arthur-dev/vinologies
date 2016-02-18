@@ -1,0 +1,12 @@
+Vinologie\ServiceBundle\Entity\Degustation:
+    properties:
+        hours:
+            - DateTime: ~
+            - NotBlank: ~
+        description:
+            - Type: string
+            - Length:
+                min: 3
+                max: 500
+            - NotBlank: ~
+        address: ~

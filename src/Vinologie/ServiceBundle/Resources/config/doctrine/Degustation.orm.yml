@@ -1,0 +1,16 @@
+Vinologie\ServiceBundle\Entity\Degustation:
+    type: entity
+    repositoryClass: Vinologie\ServiceBundle\Repository\DegustationRepository
+    fields:
+        hours:
+            type: datetime
+        description:
+            type: string
+            length: 500
+    manyToOne:
+        address:
+            targetEntity: Vinologie\UtilsBundle\Entity\Address
+            joinColumn:
+                name: address_id
+                referencedColumnName: uid
+    lifecycleCallbacks: {  }
