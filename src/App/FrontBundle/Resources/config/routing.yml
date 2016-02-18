@@ -1,3 +1,7 @@
 app_front_front_page_controller:
     resource: "@AppFrontBundle/Controller/FrontPageController.php"
     type:     annotation
+
+app_front_degustation_controller:
+    resource: "@AppFrontBundle/Controller/DegustationController.php"
+    type:     annotation
