@@ -1,0 +1,9 @@
+Core\UtilsBundle\Entity\UserRichResource:
+    type: mappedSuperclass
+    manyToOne:
+        createdBy:
+            targetEntity: Core\UserBundle\Entity\User
+            joinColumn:
+                name: user_id
+                referencedColumnName: uid
+

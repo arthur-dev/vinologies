@@ -8,11 +8,12 @@
 
 namespace Vinologie\ServiceBundle\Entity;
 
-use Core\ServiceBundle\Entity\Service;
+
+use Core\UtilsBundle\Entity\UserRichResource;
 use Vinologie\UtilsBundle\Entity\Address;
 
 
-class Degustation extends Service
+class Degustation extends UserRichResource
 {
     /**
      * @var Address
@@ -29,9 +30,9 @@ class Degustation extends Service
      */
     protected $description;
 
-    public function __construct()
+    public function __construct($user)
     {
-        parent::__construct();
+        parent::__construct($user);
     }
 
     /**
