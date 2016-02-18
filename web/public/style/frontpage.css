@@ -1,0 +1,27 @@
+#center_on_slide_first {
+  position: relative;
+  top: 25vh;
+}
+#center_on_slide_2 {
+  position: relative;
+  top: 30vh;
+}
+.center_on_slide {
+  position: relative;
+  top: 30vh;
+}
+#frontfullpage h1 {
+  font-size: 100px;
+}
+.demo-card-wide.mdl-card {
+  width: 100%;
+  max-height: 40vh;
+  height: 40vh;
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 25vh;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}

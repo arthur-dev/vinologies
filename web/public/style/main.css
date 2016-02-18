@@ -1,3 +1,35 @@
+.center_on_slide_first {
+  position: relative;
+  top: 25vh;
+}
+.header {
+  height: 8vh;
+  width: 100vw;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2000;
+}
+.header a {
+  color: white;
+}
+.header a:hover {
+  color: white;
+  text-decoration: none;
+}
+.mdl-layout__header-row .mdl-navigation__link {
+  color: #ffffff;
+}
+@font-face {
+  font-family: "Bariol-Regular";
+  src: url('font/Bariol_Regular&Italic/02 Bariol_Regular_Webfont/Bariol_Regular_Webfont/bariol_regular-webfont.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Bariol-Italic";
+  src: url('font/Bariol_Regular&Italic/02 Bariol_Regular_Webfont/Bariol_Regular_Italic_Webfont/bariol_regular_italic-webfont.ttf') format('truetype');
+}
+body {
+  font-family: 'Roboto', sans-serif;
+}
 .center_text {
   text-align: center;
 }
@@ -13,14 +45,8 @@
 .white {
   color: white;
 }
-.center_on_slide {
-  position: relative;
-  top: 40vh;
-}
-.header {
-  height: 8vh;
-  position: fixed;
-  color: white;
+#frontfullpage h1 {
+  font-size: 100px;
 }
 .demo-card-wide.mdl-card {
   width: 100%;

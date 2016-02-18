@@ -5,8 +5,8 @@
 
     {# Page d'acueil#}
     <div class="row " id="frontfullpage">
-        <div class="center_text white center_on_slide" >
-            <h1>Dégustation à domicile</h1>
+        <div class="center_text white " id="center_on_slide_first">
+            <h1 >Dégustation <br>à domicile</h1>
         </div>
     </div>
 
@@ -43,7 +43,25 @@
     </div>
 
     {# Slide fullpage 2#}
-    <div class="row " id="fullpage2"></div>
+    <div class="row " id="fullpage2">
+        <div class="center_text white " id="center_on_slide_2">
+            <h1 >Mode d'emploi</h1>
+        </div>
+    </div>
+
+    {# Slide fullpage 3#}
+    <div class="row " id="fullpage3">
+        <div class="center_text white center_on_slide" >
+            <h1 >La carte des dégustations</h1>
+        </div>
+    </div>
+
+    {# Slide fullpage 4#}
+    <div class="row " id="fullpage4">
+        <div class="center_text white center_on_slide" >
+            <h1 >Contact</h1>
+        </div>
+    </div>
 
 {% endblock %}
 
@@ -61,11 +79,28 @@
 
         #fullpage2{
             height:100vh;
-            background:url('{{ asset('public/image/fond/images.jpg') }}');
+            background:url('{{ asset('public/image/fond/cave1.jpg') }}');
             background-size: cover;
             background-attachment: fixed;
 
         }
+
+        #fullpage3{
+            height:100vh;
+            background:url('{{ asset('public/image/fond/wine-tasting.jpg') }}');
+            background-size: cover;
+            background-attachment: fixed;
+
+        }
+
+        #fullpage4{
+            height:100vh;
+            background:url('{{ asset('public/image/fond/les-caves-fond5.jpg') }}');
+            background-size: cover;
+            background-attachment: fixed;
+
+        }
+
     </style>
 
 {% endblock %}

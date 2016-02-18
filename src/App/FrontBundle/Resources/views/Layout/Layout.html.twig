@@ -23,6 +23,7 @@
         <script type="text/javascript" src="{{ asset('public/bootstrapMaison/js/bootstrap.min.js') }}"></script>
     {% endblock %}
 
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,900italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <header>
@@ -30,18 +31,20 @@
     <div class="header">
         <div class="mdl-layout__header-row">
             <!-- Title -->
-            <span style="width:20vw;"></span>
-            <span class="mdl-layout-title">Accueil</span>
+
+
             <!-- Add spacer, to align navigation to the right -->
             <div class="mdl-layout-spacer" ></div>
             <!-- Navigation -->
             <nav class="mdl-navigation" >
-                <a class="mdl-navigation__link" href="">Carte des dégustations</a>
-                <a class="mdl-navigation__link" href="">Evénements</a>
-                <a class="mdl-navigation__link" href="">Eat and Drink</a>
-                <a class="mdl-navigation__link" href="">Le concept</a>
-                <a class="mdl-navigation__link" href="">Contact</a>
+                <a class="mdl-navigation__link" href=""><h4>Accueil</h4></a>
+                <a class="mdl-navigation__link " href=""><h4>Carte des dégustations</h4></a>
+                <a class="mdl-navigation__link " href=""><h4>Evénements</h4></a>
+                <a class="mdl-navigation__link " href=""><h4>Eat and Drink</h4></a>
+                <a class="mdl-navigation__link " href=""><h4>Le concept</h4></a>
+                <a class="mdl-navigation__link " href="{{ path('login') }}"><h4>Mon Compte</h4></a>
             </nav>
+            <span style="width:7vw;"></span>
         </div>
     </div>
     {% endblock %}
