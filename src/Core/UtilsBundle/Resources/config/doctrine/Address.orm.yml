@@ -1,0 +1,32 @@
+Core\UtilsBundle\Entity\Address:
+    type: entity
+    table:  core_utils_address
+#    repositoryClass: Core\CustomerBundle\Repository\AddressRepository
+    fields:
+        street:
+          type: string
+          length: '255'
+          nullable: true
+        complement:
+          type: string
+          length: '255'
+          nullable: true
+        postalCode:
+          type: string
+          length: '255'
+        city:
+          type: string
+          length: '255'
+        country:
+          type: string
+          length: '255'
+          nullable: true
+        canonicalCity:
+          type: string
+          length: '255'
+          nullable: true
+        canonicalCountry:
+          type: string
+          length: '255'
+          nullable: true
+    lifecycleCallbacks: {  }

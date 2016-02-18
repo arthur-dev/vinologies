@@ -1,0 +1,29 @@
+Core\UtilsBundle\Entity\Address:
+    properties:
+        street:
+            - Type: string
+            - Length:
+                min: 1
+                max: 255
+            - NotBlank: ~
+        complement:
+            - Type: string
+            - Length:
+                min: 1
+                max: 255
+        postalCode:
+            - Type: string
+            - Length:   { min: 5, max: 5 }
+            - NotBlank:
+        city:
+            - Type: string
+            - Length:
+                min: 1
+                max: 255
+            - NotBlank: ~
+#        country:
+#            - Type: string
+#            - Length:
+#                min: 1
+#                max: 255
+#            - NotBlank: ~
