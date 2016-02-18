@@ -17,6 +17,12 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new App\FrontBundle\AppFrontBundle(),
+            new Core\UserBundle\CoreUserBundle(),
+            new Core\UtilsBundle\CoreUtilsBundle(),
+            new Vinologie\UserBundle\VinologieUserBundle(),
+            new Vinologie\UtilsBundle\VinologieUtilsBundle(),
+            new Core\ServiceBundle\CoreServiceBundle(),
+            new Vinologie\ServiceBundle\VinologieServiceBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

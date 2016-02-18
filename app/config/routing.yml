@@ -1,3 +1,27 @@
+vinologie_service:
+    resource: "@VinologieServiceBundle/Resources/config/routing.yml"
+    prefix:   /
+
+core_service:
+    resource: "@CoreServiceBundle/Resources/config/routing.yml"
+    prefix:   /
+
+vinologie_utils:
+    resource: "@VinologieUtilsBundle/Resources/config/routing.yml"
+    prefix:   /
+
+vinologie_user:
+    resource: "@VinologieUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+core_utils:
+    resource: "@CoreUtilsBundle/Resources/config/routing.yml"
+    prefix:   /
+
+core_user:
+    resource: "@CoreUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app_front:
     resource: "@AppFrontBundle/Resources/config/routing.yml"
     prefix:   /

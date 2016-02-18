@@ -1,0 +1,4 @@
+services:
+#    core_utils.example:
+#        class: Core\UtilsBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

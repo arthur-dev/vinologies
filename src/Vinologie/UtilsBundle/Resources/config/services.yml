@@ -1,0 +1,4 @@
+services:
+#    vinologie_utils.example:
+#        class: Vinologie\UtilsBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

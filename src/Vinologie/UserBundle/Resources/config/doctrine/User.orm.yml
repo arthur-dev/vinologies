@@ -1,0 +1,3 @@
+Vinologie\UserBundle\Entity\User:
+    type: entity
+    table: core_user_user

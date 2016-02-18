@@ -1,0 +1,14 @@
+Core\UserBundle\Entity\User:
+    type: mappedSuperclass
+#    repositoryClass: Core\UserBundle\Repository\UserRepository
+#    constraints:
+#        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+#           fields: email
+    fields:
+        username:
+            type: string
+            length: 255
+        password:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
