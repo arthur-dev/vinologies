@@ -1,6 +1,6 @@
 Core\UserBundle\Entity\User:
-#    type: mappedSuperclass
-    type: entity
+    type: mappedSuperclass
+#    type: entity
 #    repositoryClass: Core\UserBundle\Repository\UserRepository
 #    constraints:
 #        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:

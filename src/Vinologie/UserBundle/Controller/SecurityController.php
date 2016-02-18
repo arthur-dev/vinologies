@@ -3,13 +3,13 @@
  * Created by PhpStorm.
  * User: arthur
  * Date: 18/02/16
- * Time: 13:50
+ * Time: 15:21
  */
 
-namespace Core\UserBundle\Controller;
+namespace Vinologie\UserBundle\Controller;
 
-use Core\UserBundle\Entity\User;
-use Core\UserBundle\Form\UserType;
+use Vinologie\UserBundle\Entity\User;
+use Vinologie\UserBundle\Form\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -49,6 +49,7 @@ class SecurityController extends Controller
      */
     public function signUpAction(Request $request)
     {
+
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
 

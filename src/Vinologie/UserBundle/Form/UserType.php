@@ -1,13 +1,19 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: arthur
+ * Date: 18/02/16
+ * Time: 15:25
+ */
 
-namespace Core\UserBundle\Form;
+namespace Vinologie\UserBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class UserType extends AbstractType
+class UserType extends \Core\UserBundle\Form\UserType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -15,20 +21,28 @@ class UserType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        parent::buildForm($builder, $options);
+
         $builder
-            ->add('username')
-            ->add('password')
-         //   ->add('salt')
+            ->add('save', SubmitType::class, array('label' => 'Create Account'))
         ;
     }
-    
+
     /**
      * @param OptionsResolver $resolver
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Core\UserBundle\Entity\User'
+            'data_class' => 'Vinologie\UserBundle\Entity\User'
         ));
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return 'vinologie_user_form_user';
     }
 }
