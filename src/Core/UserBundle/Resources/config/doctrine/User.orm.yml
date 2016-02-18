@@ -2,9 +2,9 @@ Core\UserBundle\Entity\User:
     type: mappedSuperclass
 #    type: entity
 #    repositoryClass: Core\UserBundle\Repository\UserRepository
-#    constraints:
-#        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
-#           fields: email
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+           fields: email
     fields:
         username:
             type: string

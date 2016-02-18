@@ -63,7 +63,7 @@ class SecurityController extends Controller
 
             $encoder = $this->get('security.password_encoder');
             $encoded = $encoder->encodePassword($user, $user->getPlainPassword());
-
+            
             $user->setPassword($encoded);
             $user->addRole('ROLE_USER');
 
@@ -80,5 +80,15 @@ class SecurityController extends Controller
             'form' => $form->createView(),
         ));
 
+    }
+
+    /**
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @Route("/login_check", name="login_check")
+     */
+    public function logincheckAction(Request $request)
+    {
+        throw new \Exception('salut');
     }
 }
