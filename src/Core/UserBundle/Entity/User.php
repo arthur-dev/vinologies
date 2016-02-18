@@ -8,7 +8,6 @@
 
 namespace Core\UserBundle\Entity;
 
-
 use Core\UserBundle\Model\RoleBearerInterface;
 use Core\UserBundle\Model\UserInterface;
 use Core\UtilsBundle\Entity\RichResource;
@@ -34,10 +33,26 @@ class User extends RichResource implements UserInterface
      */
     protected $salt;
 
+    /**
+     * @var string
+     */
+    protected $email;
+
+    /**
+     * @var string
+     */
+    protected $plainPassword;
+
+    /**
+     * @var array
+     */
+    protected $roles;
+
     public function __construct()
     {
         parent::__construct();
         $this->salt=uniqid(rand(),true);
+        $this->roles= array();
     }
 
     /**
@@ -51,13 +66,35 @@ class User extends RichResource implements UserInterface
 
     public function getRoles()
     {
-        // TODO: Implement getRoles() method.
-        return array('ROLE_USER');
+        return $this->roles;
+    }
+
+    public function hasRole($role)
+    {
+       if (in_array($role,$this->roles))
+           return true;
+        else
+            return false;
+    }
+
+    public function setRoles(array $roles)
+    {
+        $this->roles=$roles;
+    }
+
+    public function addRole($role)
+    {
+        $this->roles[]=$role;
+    }
+
+    public function removeRole($role)
+    {
+        if ($this->hasRole($role))
+            unset($this->roles[$role]);
     }
 
     public function getPassword()
     {
-        // TODO: Implement getPassword() method.
         return $this->password;
     }
 
@@ -68,44 +105,37 @@ class User extends RichResource implements UserInterface
 
     public function getUsername()
     {
-        // TODO: Implement getUsername() method.
         return $this->username;
     }
 
     public function eraseCredentials()
     {
-        // TODO: Implement eraseCredentials() method.
+       $this->plainPassword = null;
     }
-
-    public function hasRole($role)
-    {
-        // TODO: Implement hasRole() method.
-    }
-
-    public function setRoles(array $roles)
-    {
-        // TODO: Implement setRoles() method.
-    }
-
-    public function addRole($role)
-    {
-        // TODO: Implement addRole() method.
-    }
-
-    public function removeRole($role)
-    {
-        // TODO: Implement removeRole() method.
-    }
-
 
     public function getEmail()
     {
-        // TODO: Implement getEmail() method.
+       return $this->email;
     }
 
     public function setEmail($email)
     {
-        // TODO: Implement setEmail() method.
+        $this->email = $email;
+    }
+
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    public function setPlainPassword($password)
+    {
+       $this->plainPassword = $password;
+    }
+
+    public function setPassword($password)
+    {
+        $this->password = $password;
     }
 
     public function getEmailCanonical()
@@ -116,21 +146,6 @@ class User extends RichResource implements UserInterface
     public function setEmailCanonical($emailCanonical)
     {
         // TODO: Implement setEmailCanonical() method.
-    }
-
-    public function getPlainPassword()
-    {
-        // TODO: Implement getPlainPassword() method.
-    }
-
-    public function setPlainPassword($password)
-    {
-        // TODO: Implement setPlainPassword() method.
-    }
-
-    public function setPassword($password)
-    {
-        $this->password = $password;
     }
 
     public function setEnabled($boolean)

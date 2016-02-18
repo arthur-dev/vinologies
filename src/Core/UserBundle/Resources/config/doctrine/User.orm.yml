@@ -15,4 +15,9 @@ Core\UserBundle\Entity\User:
         salt:
             type: string
             length: 255
+        email:
+            type: string
+            length: 255
+        roles:
+            type: array
     lifecycleCallbacks: {  }

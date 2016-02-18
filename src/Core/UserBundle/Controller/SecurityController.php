@@ -59,9 +59,8 @@ class SecurityController extends Controller
             //$this->getDoctrine()->getRepository('CoreUserBundle:User');
 
             $encoder = $this->get('security.password_encoder');
-            $encoded = $encoder->encodePassword($user, $user->getPassword());
+            $encoded = $encoder->encodePassword($user, $user->getPlainPassword());
             $user->setPassword($encoded);
-            dump($encoded);
 
             $this->getDoctrine()->getEntityManager()->persist($user);
             $this->getDoctrine()->getEntityManager()->flush();

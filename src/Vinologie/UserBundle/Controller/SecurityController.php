@@ -8,6 +8,8 @@
 
 namespace Vinologie\UserBundle\Controller;
 
+use Core\UserBundle\CoreUserBundle;
+use Core\UtilsBundle\Event\ResourceEvent;
 use Vinologie\UserBundle\Entity\User;
 use Vinologie\UserBundle\Form\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -60,12 +62,16 @@ class SecurityController extends Controller
             //$this->getDoctrine()->getRepository('CoreUserBundle:User');
 
             $encoder = $this->get('security.password_encoder');
-            $encoded = $encoder->encodePassword($user, $user->getPassword());
+            $encoded = $encoder->encodePassword($user, $user->getPlainPassword());
+
             $user->setPassword($encoded);
-            dump($encoded);
+            $user->addRole('ROLE_USER');
 
             $this->getDoctrine()->getEntityManager()->persist($user);
             $this->getDoctrine()->getEntityManager()->flush();
+
+            $event = new ResourceEvent($user);
+            $this->get('event_dispatcher')->dispatch(CoreUserBundle::USER_CREATED, $event);
 
             return $this->redirectToRoute('app_front_homepage');
         }
