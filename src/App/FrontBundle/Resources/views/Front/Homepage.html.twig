@@ -1,153 +1,71 @@
 {% extends 'AppFrontBundle:Layout:Layout.html.twig' %}
 
 
-
-
-
-
 {% block content %}
 
-
-    <div class="header">
-        <div class="mdl-layout__header-row">
-            <!-- Title -->
-            <span style="width:20vw;"></span>
-            <span class="mdl-layout-title">Accueil</span>
-            <!-- Add spacer, to align navigation to the right -->
-            <div class="mdl-layout-spacer" style="display:inline;"></div>
-            <!-- Navigation -->
-            <nav class="mdl-navigation" >
-                <a class="mdl-navigation__link" href="">Carte des dégustations</a>
-                <a class="mdl-navigation__link" href="">Evénements</a>
-                <a class="mdl-navigation__link" href="">Eat and Drink</a>
-                <a class="mdl-navigation__link" href="">Le concept</a>
-                <a class="mdl-navigation__link" href="">Contact</a>
-            </nav>
-
-        </div>
-
-    </div>
-    <div class="row frontfullpage">
-
-        <div class="center_text" style="color:white; position:relative;top:40vh;">
+    {# Page d'acueil#}
+    <div class="row " id="frontfullpage">
+        <div class="center_text white center_on_slide" >
             <h1>Dégustation à domicile</h1>
         </div>
-
     </div>
-    <div >
 
-<div class="row paddingTopBottom" >
-    <div class="col-sm-offset-1 col-sm-10">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">Welcome</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Mauris sagittis pellentesque lacus eleifend lacinia...
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                            Get Started
-                        </a>
-                    </div>
-                    <div class="mdl-card__menu">
-                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                            <i class="material-icons">share</i>
-                        </button>
-                    </div>
+    {# Slide future dégustations#}
+    <div class="row paddingTopBottom" >
+        <div class="col-sm-offset-1 col-sm-10">
+            <div class="row">
+                <div class="col-sm-4">
+                    {% include 'AppFrontBundle:Layout:vignetteAccueil.html.twig' with {
+                    'title': 'Mercredi 12 Mars' ,
+                    'texte': 'Edouard vous invite à découvrir une séléction de medoc' ,
+                    'button': 'Réservez vos places !',
+                    'id':1,
+                    'urlpicture': 'http://avis-vin.lefigaro.fr/var/img/56/13757-650x330-degust.jpg'} %}
                 </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">Welcome</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Mauris sagittis pellentesque lacus eleifend lacinia...
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                            Get Started
-                        </a>
-                    </div>
-                    <div class="mdl-card__menu">
-                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                            <i class="material-icons">share</i>
-                        </button>
-                    </div>
+                <div class="col-sm-4">
+                    {% include 'AppFrontBundle:Layout:vignetteAccueil.html.twig' with {
+                    'title': 'Lundi 18 Mars' ,
+                    'texte': 'Arthur vous invite à découvrir une séléction de Pessac' ,
+                    'button': 'Réservez vos places !',
+                    'id':2,
+                    'urlpicture': 'http://avis-vin.lefigaro.fr/var/img/56/13757-650x330-degust.jpg'} %}
                 </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">Welcome</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Mauris sagittis pellentesque lacus eleifend lacinia...
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                            Get Started
-                        </a>
-                    </div>
-                    <div class="mdl-card__menu">
-                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                            <i class="material-icons">share</i>
-                        </button>
-                    </div>
+                <div class="col-sm-4">
+                    {% include 'AppFrontBundle:Layout:vignetteAccueil.html.twig' with {
+                    'title': 'Mercredi 26 Mars' ,
+                    'texte': 'Jean-Patrick le Shlag nous vous invite à découvrir une séléction de vin de table qui piquent la gorge' ,
+                    'button': 'Réservez vos places !',
+                    'id':3,
+                    'urlpicture': 'http://avis-vin.lefigaro.fr/var/img/56/13757-650x330-degust.jpg'} %}
                 </div>
             </div>
         </div>
-
     </div>
-</div>
+
+    {# Slide fullpage 2#}
+    <div class="row " id="fullpage2"></div>
+
+{% endblock %}
 
 
-    </div>
-    <div class="row fullpage2"></div>
-
-
-
-
-
+{% block css %}
+    {{ parent() }}
     <style>
-        .header{
-            height: 8vh;
-            position:fixed;
-            color:white;
-        }
-
-        .frontfullpage{
+        #frontfullpage{
             height:100vh;
             background:url('{{ asset('public/image/fond/glass_wine_red_pouring_a_bottle_black_background_wallpaper.jpg') }}');
             background-size: cover;
             background-attachment: fixed;
+
         }
 
-        .fullpage2{
+        #fullpage2{
             height:100vh;
             background:url('{{ asset('public/image/fond/images.jpg') }}');
             background-size: cover;
             background-attachment: fixed;
+
         }
     </style>
 
-    <style>
-        .demo-card-wide.mdl-card {
-            width: 100%;
-        }
-        .demo-card-wide > .mdl-card__title {
-            color: #fff;
-            height: 176px;
-            background: url('http://avis-vin.lefigaro.fr/var/img/56/13757-650x330-degust.jpg') center / cover;
-        }
-        .demo-card-wide > .mdl-card__menu {
-            color: #fff;
-        }
-    </style>
 {% endblock %}

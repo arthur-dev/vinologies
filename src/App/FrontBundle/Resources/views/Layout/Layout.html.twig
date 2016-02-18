@@ -25,7 +25,30 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
+<header>
+    {% block Menu %}
+    <div class="header">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span style="width:20vw;"></span>
+            <span class="mdl-layout-title">Accueil</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer" ></div>
+            <!-- Navigation -->
+            <nav class="mdl-navigation" >
+                <a class="mdl-navigation__link" href="">Carte des dégustations</a>
+                <a class="mdl-navigation__link" href="">Evénements</a>
+                <a class="mdl-navigation__link" href="">Eat and Drink</a>
+                <a class="mdl-navigation__link" href="">Le concept</a>
+                <a class="mdl-navigation__link" href="">Contact</a>
+            </nav>
+        </div>
+    </div>
+    {% endblock %}
+</header>
 <body>
+
+
 
 {% block content %}
 
