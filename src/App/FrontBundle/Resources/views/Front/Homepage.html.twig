@@ -10,18 +10,24 @@
         </div>
     </div>
 
+
+
     {# Slide future dégustations#}
     <div class="row paddingTopBottom" >
         <div class="col-sm-offset-1 col-sm-10">
             <div class="row">
+                {%  for degustation in degustations %}
+
                 <div class="col-sm-4">
                     {% include 'AppFrontBundle:Layout:vignetteAccueil.html.twig' with {
-                    'title': 'Mercredi 12 Mars' ,
-                    'texte': 'Edouard vous invite à découvrir une séléction de medoc' ,
+                    'date': degustation.hours,
+                    'texte': degustation.description ,
                     'button': 'Réservez vos places !',
-                    'id':1,
+                    'id': degustation.uid,
                     'urlpicture': 'http://avis-vin.lefigaro.fr/var/img/56/13757-650x330-degust.jpg'} %}
                 </div>
+                {%  endfor %}
+                {#
                 <div class="col-sm-4">
                     {% include 'AppFrontBundle:Layout:vignetteAccueil.html.twig' with {
                     'title': 'Lundi 18 Mars' ,
@@ -38,6 +44,7 @@
                     'id':3,
                     'urlpicture': 'http://avis-vin.lefigaro.fr/var/img/56/13757-650x330-degust.jpg'} %}
                 </div>
+                #}
             </div>
         </div>
     </div>

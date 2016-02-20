@@ -13,6 +13,10 @@ class FrontPageController extends Controller
      */
     public function homePageAction()
     {
-        return $this->render('AppFrontBundle:Front:Homepage.html.twig');
+        $degustations = $this->get('vinologie_service_front_page')->getHighlightedDegustation();
+
+        return $this->render('AppFrontBundle:Front:Homepage.html.twig',array(
+            'degustations' => $degustations
+        ));
     }
 }

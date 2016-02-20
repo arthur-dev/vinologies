@@ -2,3 +2,6 @@ services:
 #    app_front.example:
 #        class: App\FrontBundle\Example
 #        arguments: ["@service_id", "plain_value", %parameter%]
+    vinologie_service_front_page:
+        class: App\FrontBundle\Service\FrontpageService
+        arguments: [ "@doctrine.orm.entity_manager" ]

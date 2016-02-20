@@ -5,4 +5,8 @@ services:
 
     vinologie_service_degustation_subscription:
         class: Vinologie\ServiceBundle\Service\DegustationSubscriptionService
-        arguments: [ doctrine.orm.entity_manager , event_dispatcher ]
+        arguments: [ "@doctrine.orm.entity_manager" , "@event_dispatcher" ]
+
+    vinologie_service_guest_list:
+        class: Vinologie\ServiceBundle\Service\GuestListService
+        arguments: [ "@doctrine.orm.entity_manager" ]
