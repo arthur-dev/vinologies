@@ -68,7 +68,7 @@ class Degustation extends UserRichResource
     }
 
     /**
-     * @return \Datetime
+     * @return \Datetime@
      */
     public function getHours()
     {
@@ -82,6 +82,5 @@ class Degustation extends UserRichResource
     {
         $this->hours = $hours;
     }
-
 
 }

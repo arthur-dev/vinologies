@@ -218,6 +218,4 @@ class User extends RichResource implements UserInterface
         // TODO: Implement isEnabled() method.
     }
 
-
-
 }

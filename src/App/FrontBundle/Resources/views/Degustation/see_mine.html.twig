@@ -1,0 +1,24 @@
+{% extends 'AppFrontBundle:Layout:Layout.html.twig' %}
+
+{% block content %}
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br>
+
+    {% if degustations is not null %}
+        {%  for degustation in degustations %}
+            <br>
+            {{ degustation.description }}
+            {{ degustation.hours | date }}
+            {{ degustation.address.street }}
+            {%  if  degustation.address.complement is defined %}
+            {{ degustation.address.complement }}
+            {%  endif %}
+            {{ degustation.address.postalCode }}
+            {{ degustation.address.city }}
+        {% endfor %}
+    {%  endif %}
+
+
+{% endblock %}

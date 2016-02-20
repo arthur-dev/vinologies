@@ -5,3 +5,7 @@ app_front_front_page_controller:
 app_front_degustation_controller:
     resource: "@AppFrontBundle/Controller/DegustationController.php"
     type:     annotation
+
+app_front_account_controller:
+    resource: "@AppFrontBundle/Controller/AccountController.php"
+    type:     annotation

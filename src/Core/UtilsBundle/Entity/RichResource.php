@@ -103,4 +103,11 @@ class RichResource extends Resource implements RichResourceInterface
         else
             $this->updatedAt = new \DateTime();
     }
+
+
+    static public function getClass()
+    {
+        return str_replace("\\","",str_replace('\\Entity\\',":", get_called_class()));
+    }
+
 }

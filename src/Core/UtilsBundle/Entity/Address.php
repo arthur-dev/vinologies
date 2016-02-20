@@ -182,5 +182,4 @@ class Address extends RichResource implements AddressInterface
         $this->canonicalCountry = $canonicalCountry;
     }
 
-
 }

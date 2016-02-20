@@ -60,4 +60,5 @@ interface AddressInterface
      * @return int
      */
     public function getPostalCode();
+
 }
