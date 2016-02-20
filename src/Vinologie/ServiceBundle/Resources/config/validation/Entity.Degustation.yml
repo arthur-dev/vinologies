@@ -9,4 +9,9 @@ Vinologie\ServiceBundle\Entity\Degustation:
                 min: 3
                 max: 500
             - NotBlank: ~
+        maxGuestNumber:
+            - Type: integer
+            - Range:
+                min: 0
+                max: 50
         address: ~

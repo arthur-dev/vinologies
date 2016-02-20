@@ -2,3 +2,7 @@ services:
 #    vinologie_service.example:
 #        class: Vinologie\ServiceBundle\Example
 #        arguments: ["@service_id", "plain_value", %parameter%]
+
+    vinologie_service_degustation_subscription:
+        class: Vinologie\ServiceBundle\Service\DegustationSubscriptionService
+        arguments: [ doctrine.orm.entity_manager , event_dispatcher ]

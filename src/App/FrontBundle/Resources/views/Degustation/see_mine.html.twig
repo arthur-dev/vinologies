@@ -12,6 +12,8 @@
             {{ degustation.description }}
             {{ degustation.hours | date }}
             {{ degustation.address.street }}
+            {{ degustation.guestNumber  }}
+            {{ degustation.maxGuestNumber }}
             {%  if  degustation.address.complement is defined %}
             {{ degustation.address.complement }}
             {%  endif %}

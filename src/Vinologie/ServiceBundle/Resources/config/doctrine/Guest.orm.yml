@@ -1,0 +1,23 @@
+Vinologie\ServiceBundle\Entity\Guest:
+    type: entity
+    table: vinologie_service_guest
+    repositoryClass: Vinologie\ServiceBundle\Repository\GuestRepository
+    fields:
+        state:
+            type: integer
+        reason:
+            type: string
+            length: 255
+            nullable: true
+    manyToOne:
+        degustation:
+            targetEntity: Vinologie\ServiceBundle\Entity\Degustation
+            joinColumn:
+                name: degustation_id
+                referencedColumnName: uid
+        guest:
+            targetEntity: Vinologie\UserBundle\Entity\User
+            joinColumn:
+                name: guest_id
+                referencedColumnName: uid
+    lifecycleCallbacks: {  }

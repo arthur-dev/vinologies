@@ -8,6 +8,10 @@ Vinologie\ServiceBundle\Entity\Degustation:
         description:
             type: string
             length: 500
+        guestNumber:
+            type: integer
+        maxGuestNumber:
+            type: integer
     manyToOne:
         address:
             targetEntity: Vinologie\UtilsBundle\Entity\Address

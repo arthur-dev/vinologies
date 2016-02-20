@@ -30,9 +30,20 @@ class Degustation extends UserRichResource
      */
     protected $description;
 
+    /**
+     * @var integer
+     */
+    protected $maxGuestNumber;
+
+    /**
+     * @var integer
+     */
+    protected $guestNumber;
+
     public function __construct($user)
     {
         parent::__construct($user);
+        $this->guestNumber = 0;
     }
 
     /**
@@ -82,5 +93,38 @@ class Degustation extends UserRichResource
     {
         $this->hours = $hours;
     }
+
+    /**
+     * @return int
+     */
+    public function getGuestNumber()
+    {
+        return $this->guestNumber;
+    }
+
+    /**
+     * @param int $guestNumber
+     */
+    public function setGuestNumber($guestNumber)
+    {
+        $this->guestNumber = $guestNumber;
+    }
+
+    /**
+     * @return int
+     */
+    public function getMaxGuestNumber()
+    {
+        return $this->maxGuestNumber;
+    }
+
+    /**
+     * @param int $maxGuestNumber
+     */
+    public function setMaxGuestNumber($maxGuestNumber)
+    {
+        $this->maxGuestNumber = $maxGuestNumber;
+    }
+
 
 }
