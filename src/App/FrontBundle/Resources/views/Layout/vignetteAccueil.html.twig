@@ -1,13 +1,13 @@
 <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-    <div class="mdl-card__title" id="vignette{{ id }}">
-        <h2 class="mdl-card__title-text">{{ date | date }}</h2>
+    <div class="mdl-card__title" id="vignette{{ degustation.uid }}">
+        <h2 class="mdl-card__title-text">{{ degustation.hours | date }}</h2>
     </div>
     <div class="mdl-card__supporting-text">
-        {{ texte }}
+        {{ degustation.description}}
     </div>
     <div class="mdl-card__actions mdl-card--border">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-            {{ button }}
+        <a href="{{ path('app_front_degustation_subscribe',{'uid' : degustation.uid }) }}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            Réservez vos places !
         </a>
     </div>
     <div class="mdl-card__menu">
@@ -18,7 +18,7 @@
 </div>
 
 <style>
-    #vignette{{ id }}
+    #vignette{{ degustation.uid }}
     {
         background: url('{{ urlpicture }}') center / cover;
     }

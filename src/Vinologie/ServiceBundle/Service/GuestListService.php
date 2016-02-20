@@ -28,6 +28,7 @@ class GuestListService
     public function getGuests(Degustation $degustation)
     {
         $guests = null;
+        //todo ne retrouner que les guest qui ont été accepté par le owner
         $guests = $this->em->getRepository(Guest::getClass())->findByDegustation($degustation);
         if ($guests == null)
         {

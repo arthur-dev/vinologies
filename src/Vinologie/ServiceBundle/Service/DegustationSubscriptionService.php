@@ -10,7 +10,7 @@
 namespace Vinologie\ServiceBundle\Service;
 
 use Doctrine\ORM\EntityManager;
-use Symfony\Component\EventDispatcher\EventDispatcher;
+use Symfony\Component\HttpKernel\Debug\TraceableEventDispatcher;
 use Vinologie\ServiceBundle\Entity\Degustation;
 use Vinologie\ServiceBundle\Entity\Guest;
 use Vinologie\UserBundle\Entity\User;
@@ -27,7 +27,7 @@ class DegustationSubscriptionService
      */
     protected $ed;
 
-    public function __construct(EntityManager $em, EventDispatcher $ed)
+    public function __construct(EntityManager $em, TraceableEventDispatcher $ed)
     {
         $this->em = $em;
         $this->ed = $ed;
@@ -42,6 +42,7 @@ class DegustationSubscriptionService
     {
         if ($this->hasFreeSpace($degustation))
         {
+            //todo verifier que ce user n'est pas deja inscrit
             $guest= new Guest($degustation,$user);
             $this->em->persist($guest);
             $this->em->flush();

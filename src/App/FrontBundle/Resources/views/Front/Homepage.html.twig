@@ -16,17 +16,22 @@
     <div class="row paddingTopBottom" >
         <div class="col-sm-offset-1 col-sm-10">
             <div class="row">
+                {% if degustations is not null %}
                 {%  for degustation in degustations %}
-
                 <div class="col-sm-4">
                     {% include 'AppFrontBundle:Layout:vignetteAccueil.html.twig' with {
-                    'date': degustation.hours,
-                    'texte': degustation.description ,
-                    'button': 'Réservez vos places !',
-                    'id': degustation.uid,
-                    'urlpicture': 'http://avis-vin.lefigaro.fr/var/img/56/13757-650x330-degust.jpg'} %}
+                    'degustation' : degustation,
+                    'urlpicture': 'http://avis-vin.lefigaro.fr/var/img/56/13757-650x330-degust.jpg'
+                    } %}
+
+                    {% for guest in get_guest_list(degustation)  %}
+                        {{ guest.username }}
+                    {%  endfor %}
                 </div>
+
+
                 {%  endfor %}
+                {%  endif %}
                 {#
                 <div class="col-sm-4">
                     {% include 'AppFrontBundle:Layout:vignetteAccueil.html.twig' with {

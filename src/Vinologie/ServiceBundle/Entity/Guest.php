@@ -37,6 +37,7 @@ class Guest extends RichResource
 
     public function __construct(Degustation $degustation, User $user)
     {
+        parent::__construct();
         $this->degustation = $degustation;
         $this->guest = $user;
         $this->state = self::ASKED;

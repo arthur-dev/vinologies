@@ -61,4 +61,15 @@ class DegustationController extends Controller
             'degustations'=>$degustations
         ));
     }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @Route("/degustation/subscribe/{uid}", name="app_front_degustation_subscribe")
+     * @Security("has_role('ROLE_USER')")
+     */
+    public function subscribeToDegustation(Request $request ,Degustation $degustation)
+    {
+        $this->get('vinologie_service_degustation_subscription')->askForDegustationSubscription( $degustation ,$this->getUser());
+        return $this->redirectToRoute('app_front_homepage');
+    }
 }

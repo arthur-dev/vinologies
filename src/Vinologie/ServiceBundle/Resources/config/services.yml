@@ -10,3 +10,12 @@ services:
     vinologie_service_guest_list:
         class: Vinologie\ServiceBundle\Service\GuestListService
         arguments: [ "@doctrine.orm.entity_manager" ]
+
+
+    asi_advert.advert_type_extension:
+        class: Vinologie\ServiceBundle\TwigExtension\DegustationTypeExtension
+        public: false
+        tags:
+            - { name: twig.extension }
+        arguments:
+            - "@vinologie_service_guest_list"
