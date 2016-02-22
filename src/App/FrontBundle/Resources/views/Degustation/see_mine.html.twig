@@ -1,26 +1,35 @@
 {% extends 'AppFrontBundle:Layout:Layout.html.twig' %}
 
 {% block content %}
+    <div class="padding-body" style="padding-top: 8vh;">
+        <div class="row ">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="row">
+                    {% if degustations is not null %}
+                        {%  for degustation in degustations %}
+                            <div class="col-md-6">
+                            {#
+                            {{ degustation.description }}
+                            {{ degustation.hours | date }}
+                            {{ degustation.address.street }}
+                            {{ degustation.guestNumber  }}
+                            {{ degustation.maxGuestNumber }}
+                            {%  if  degustation.address.complement is defined %}
+                            {{ degustation.address.complement }}
+                            {%  endif %}
+                            {{ degustation.address.postalCode }}
+                            {{ degustation.address.city }}
+                #}
+                            {% include 'AppFrontBundle:Layout:vignetteAccueil.html.twig' with {
+                            'degustation' : degustation,
+                            'urlpicture': 'http://avis-vin.lefigaro.fr/var/img/56/13757-650x330-degust.jpg'
+                            } %}
 
-
-    <br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br>
-
-    {% if degustations is not null %}
-        {%  for degustation in degustations %}
-            <br>
-            {{ degustation.description }}
-            {{ degustation.hours | date }}
-            {{ degustation.address.street }}
-            {{ degustation.guestNumber  }}
-            {{ degustation.maxGuestNumber }}
-            {%  if  degustation.address.complement is defined %}
-            {{ degustation.address.complement }}
-            {%  endif %}
-            {{ degustation.address.postalCode }}
-            {{ degustation.address.city }}
-        {% endfor %}
-    {%  endif %}
-
-
+                            </div>
+                        {% endfor %}
+                    {%  endif %}
+                </div>
+            </div>
+        </div>
+    <div>
 {% endblock %}

@@ -1,6 +1,9 @@
 <?php
 
 namespace Vinologie\ServiceBundle\Repository;
+use Vinologie\ServiceBundle\Entity\Degustation;
+use Vinologie\ServiceBundle\Entity\Guest;
+use Vinologie\UserBundle\Entity\User;
 
 /**
  * GuestRepository
@@ -10,4 +13,42 @@ namespace Vinologie\ServiceBundle\Repository;
  */
 class GuestRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**
+     * Retourne la liste des guest qui ont fait une demande pour une dégustation
+     * @param User $user
+     * @return array
+     */
+    public function myFindWaitingGuest(User $user)
+    {
+        $select = ' SELECT g ';
+        $from = ' FROM ' . Guest::getClass() . ' g JOIN g.degustation d JOIN d.createdBy u';
+        $where = ' WHERE u.uid=:user ';
+        $where .= ' AND g.state=1';
+
+        $query = $this->_em->createQuery($select . $from . $where);
+        $query->setParameter('user', $user->getUid());
+        $results = $query->getResult();
+
+        return $results;
+    }
+
+    /**
+     * Retourne la liste des guest qui ont fait une demande pour une dégustation
+     * @param User $user
+     * @return array
+     */
+    public function myFindGuest(Degustation $degustation,$state)
+    {
+        $select = ' SELECT g ';
+        $from = ' FROM ' . Guest::getClass() . ' g JOIN g.degustation d ';
+        $where = ' WHERE d.uid=:degustation ';
+        $where .= ' AND g.state=:state';
+
+        $query = $this->_em->createQuery($select . $from . $where);
+        $query->setParameter('degustation', $degustation->getUid());
+        $query->setParameter('state', $state);
+        $results = $query->getResult();
+
+        return $results;
+    }
 }

@@ -25,16 +25,18 @@ security:
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
 
+
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        my_firewall:
-            pattern: ^/
-            anonymous: ~
-            form_login: ~
-            logout:
-
         main:
-            anonymous: ~
+            anonymous: true
+            form_login:
+                login_path: login
+                check_path: login_check
+                default_target_path: /myaccount/dashboard
+            logout:
+                path:   /logout
+
 

@@ -10,6 +10,7 @@
 namespace Vinologie\ServiceBundle\TwigExtension;
 
 use Vinologie\ServiceBundle\Entity\Degustation;
+use Vinologie\ServiceBundle\Entity\Guest;
 use Vinologie\ServiceBundle\Service\GuestListService;
 
 class DegustationTypeExtension  extends \Twig_Extension
@@ -34,14 +35,20 @@ class DegustationTypeExtension  extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            new \Twig_SimpleFunction('get_guest_list', array($this, 'getGuestList')),
+            new \Twig_SimpleFunction('get_accepted_guest_list', array($this, 'getAcceptedGuestList')),
+            new \Twig_SimpleFunction('get_waiting_guest_list', array($this, 'getWaitingGuestList')),
         );
     }
 
 
-    public function getGuestList(Degustation $degustation)
+    public function getAcceptedGuestList(Degustation $degustation)
     {
-        return $this->guestService->getGuests($degustation);
+        return $this->guestService->getGuests($degustation,Guest::ACCEPTED);
+    }
+
+    public function getWaitingGuestList(Degustation $degustation)
+    {
+        return $this->guestService->getGuests($degustation,Guest::ASKED);
     }
 
     /**

@@ -1,8 +1,8 @@
-Core\UtilsBundle\Entity\UserRichResource:
+Vinologie\UtilsBundle\Entity\UserRichResource:
     type: mappedSuperclass
     manyToOne:
         createdBy:
-            targetEntity: Core\UserBundle\Entity\User
+            targetEntity: Vinologie\UserBundle\Entity\User
             joinColumn:
                 name: user_id
                 referencedColumnName: uid

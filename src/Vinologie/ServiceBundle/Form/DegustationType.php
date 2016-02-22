@@ -22,7 +22,7 @@ class DegustationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('hours', DateTimeType::class,array('required'=>true))
+            ->add('hours', DateTimeType::class,array('required'=>true,'data' => new \Datetime('now')))
             ->add('description', TextType::class, array('required'=>true))
             ->add('address',AddressType::class,array('required'=>true))
             ->add('maxGuestNumber',IntegerType::class, array('required'=>true))

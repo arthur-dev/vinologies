@@ -1,0 +1,40 @@
+{% extends 'AppFrontBundle:Layout:Layout.html.twig' %}
+
+{% block content %}
+    <div class="padding-body" style="padding-top: 8vh;">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="row">
+                    {{ degustation.description }}
+                    {{ degustation.hours | date }}
+                    {{ degustation.address.street }}
+                    {{ degustation.guestNumber  }}
+                    {{ degustation.maxGuestNumber }}
+                    {%  if  degustation.address.complement is defined %}
+                        {{ degustation.address.complement }}
+                    {%  endif %}
+                    {{ degustation.address.postalCode }}
+                    {{ degustation.address.city }}
+
+                    <br>
+                    Accepted guests :
+                    {% for guest in get_accepted_guest_list(degustation)  %}
+                        {{ guest.username }}
+                    {%  endfor %}
+
+                    <br>
+                    Waiting guests :
+                    {% for guest in get_waiting_guest_list(degustation)  %}
+                        {{ guest.username }}
+                    {%  endfor %}
+
+                    <br>
+                    <a href="{{ path('app_front_degustation_subscribe',{'uid' : degustation.uid }) }}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Réservez vos places !
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

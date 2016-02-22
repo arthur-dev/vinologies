@@ -73,7 +73,7 @@ class SecurityController extends Controller
             $event = new ResourceEvent($user);
             $this->get('event_dispatcher')->dispatch(CoreUserBundle::USER_CREATED, $event);
 
-            return $this->redirectToRoute('app_front_homepage');
+            return $this->redirectToRoute('app_front_my_account_dashboard');
         }
 
         return $this->render('CoreUserBundle:Security:signup.html.twig', array(

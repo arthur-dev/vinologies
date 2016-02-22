@@ -11,6 +11,7 @@ namespace Vinologie\ServiceBundle\Service;
 use Doctrine\ORM\EntityManager;
 use Vinologie\ServiceBundle\Entity\Degustation;
 use Vinologie\ServiceBundle\Entity\Guest;
+use Vinologie\UserBundle\Entity\User;
 
 class GuestListService
 {
@@ -25,11 +26,11 @@ class GuestListService
         $this->em = $em;
     }
 
-    public function getGuests(Degustation $degustation)
+    public function getGuests(Degustation $degustation,$state)
     {
         $guests = null;
-        //todo ne retrouner que les guest qui ont été accepté par le owner
-        $guests = $this->em->getRepository(Guest::getClass())->findByDegustation($degustation);
+
+        $guests = $this->em->getRepository(Guest::getClass())->myFindGuest($degustation,$state);
         if ($guests == null)
         {
             return [];
@@ -41,6 +42,11 @@ class GuestListService
             $guestList[] = $guest->getGuest();
         }
         return $guestList;
+    }
+
+    public function getWaitingGuestByUser(User $user)
+    {
+        return $this->em->getRepository(Guest::getClass())->myFindWaitingGuest($user);
     }
 
 }

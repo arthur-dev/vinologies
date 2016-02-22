@@ -9,8 +9,9 @@
 namespace Vinologie\ServiceBundle\Entity;
 
 
-use Core\UtilsBundle\Entity\UserRichResource;
+
 use Vinologie\UtilsBundle\Entity\Address;
+use Vinologie\UtilsBundle\Entity\UserRichResource;
 
 
 class Degustation extends UserRichResource
@@ -108,6 +109,22 @@ class Degustation extends UserRichResource
     public function setGuestNumber($guestNumber)
     {
         $this->guestNumber = $guestNumber;
+    }
+
+    /**
+     *
+     */
+    public function addGuest()
+    {
+        $this->guestNumber++;
+    }
+
+    /**
+     *
+     */
+    public function removeGuest()
+    {
+        $this->guestNumber--;
     }
 
     /**

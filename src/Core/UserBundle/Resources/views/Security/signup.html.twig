@@ -1,9 +1,42 @@
 {% extends 'AppFrontBundle:Layout:Layout.html.twig' %}
 
 {% block content %}
+    <div class="padding-body" style="padding-top: 8vh;">
+        <div class="row">
+            <div class="col-md-offset-4 col-md-4">
+                <h3 class="center_text">Inscription</h3>
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br>
-    {{ form(form) }}
+                    {{ form_start(form) }}
+                    {{ form_errors(form) }}
 
+                <div class="center_img mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {{ form_label(form.username,"Nom d'utilisateur", {'label_attr': {'class': 'mdl-textfield__label'}}) }}
+                {{ form_widget(form.username, {'attr': {'class': 'mdl-textfield__input'}}) }}
+                {{ form_errors(form.username) }}
+                </div>
+
+                <div class="center_img mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    {{ form_label(form.plainPassword.first,"Mot de passe", {'label_attr': {'class': 'mdl-textfield__label'}}) }}
+                    {{ form_widget(form.plainPassword.first, {'attr': {'class': 'mdl-textfield__input'}}) }}
+                    {{ form_errors(form.plainPassword.first) }}
+                </div>
+
+                <div class="center_img mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    {{ form_label(form.plainPassword.second,"Veuillez répeter le mot de passe", {'label_attr': {'class': 'mdl-textfield__label'}}) }}
+                    {{ form_widget(form.plainPassword.second, {'attr': {'class': 'mdl-textfield__input'}}) }}
+                    {{ form_errors(form.plainPassword.second) }}
+                </div>
+
+                <div class="center_img mdl-textfield mdl-js-textfield mdl-textfield--floating-label ">
+                    {{ form_label(form.email,"E-mail", {'label_attr': {'class': 'mdl-textfield__label'}}) }}
+                    {{ form_widget(form.email, {'attr': {'class': 'mdl-textfield__input'}}) }}
+                    {{ form_errors(form.email) }}
+                </div>
+
+                    {{ form_row(form.save, {'attr': {'class': 'center_img mdl-button mdl-js-button mdl-button--primary'}}) }}
+
+                    {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
 {% endblock %}

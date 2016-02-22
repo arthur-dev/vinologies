@@ -1,6 +1,29 @@
-.center_on_slide_first {
+#center_on_slide_first {
   position: relative;
   top: 25vh;
+}
+#center_on_slide_2 {
+  position: relative;
+  top: 30vh;
+}
+.center_on_slide {
+  position: relative;
+  top: 30vh;
+}
+#frontfullpage h1 {
+  font-size: 100px;
+}
+.demo-card-wide.mdl-card {
+  width: 100%;
+  max-height: 40vh;
+  height: 40vh;
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 25vh;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
 }
 .header {
   height: 8vh;
@@ -16,6 +39,9 @@
   color: white;
   text-decoration: none;
 }
+.padding-body {
+  padding-top: 8vh;
+}
 .mdl-layout__header-row .mdl-navigation__link {
   color: #ffffff;
 }
@@ -26,9 +52,6 @@
 @font-face {
   font-family: "Bariol-Italic";
   src: url('font/Bariol_Regular&Italic/02 Bariol_Regular_Webfont/Bariol_Regular_Italic_Webfont/bariol_regular_italic-webfont.ttf') format('truetype');
-}
-body {
-  font-family: 'Roboto', sans-serif;
 }
 .center_text {
   text-align: center;
@@ -45,18 +68,11 @@ body {
 .white {
   color: white;
 }
-#frontfullpage h1 {
-  font-size: 100px;
+body {
+  margin-top: 2200px;
+  padding-top: 100px;
+  font-family: 'Roboto', sans-serif;
 }
-.demo-card-wide.mdl-card {
-  width: 100%;
-  max-height: 40vh;
-  height: 40vh;
-}
-.demo-card-wide > .mdl-card__title {
-  color: #fff;
-  height: 25vh;
-}
-.demo-card-wide > .mdl-card__menu {
-  color: #fff;
+.paddingTop {
+  padding-top: 30px;
 }

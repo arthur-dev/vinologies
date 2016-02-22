@@ -42,7 +42,11 @@ class DegustationSubscriptionService
     {
         if ($this->hasFreeSpace($degustation))
         {
-            //todo verifier que ce user n'est pas deja inscrit
+            //verifier que ce user n'est pas deja inscrit
+            if ($this->em->getRepository(Guest::getClass())->findOneBy(array('degustation'=>$degustation,'guest'=>$user)))
+            {
+                return false;
+            }
             $guest= new Guest($degustation,$user);
             $this->em->persist($guest);
             $this->em->flush();
@@ -68,7 +72,7 @@ class DegustationSubscriptionService
            if ($this->hasFreeSpace($guest->getDegustation()))
            {
                $guest->setState(Guest::ACCEPTED);
-               $guest->getDegustation()->setGuestNumber($guest->getDegustation()->getGuestNumber() + 1);
+               $guest->getDegustation()->addGuest();
                $this->em->flush();
                //todo notify guest user that his demand has been accepted
            }
@@ -107,7 +111,7 @@ class DegustationSubscriptionService
     {
         //todo security check ? is the user the owner ?
         $guest->setState(Guest::CANCELED);
-        $guest->getDegustation()->setGuestNumber($guest->getDegustation()->getGuestNumber() - 1);
+        $guest->getDegustation()->removeGuest();
         $guest->setReason($reason);
         //todo notify the user that his demand has been canceled
 

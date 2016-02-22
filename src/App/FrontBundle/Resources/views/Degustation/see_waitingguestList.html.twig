@@ -1,0 +1,20 @@
+{% extends 'AppFrontBundle:Layout:Layout.html.twig' %}
+
+{% block content %}
+    <div class="padding-body" style="padding-top: 8vh;">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="row">
+
+            {% for guest in guests %}
+                {{ guest.guest.username }}
+                <a href="{{ path('app_front_degustation_accept_guest',{'uid':guest.uid}) }}" class="mdl-button mdl-js-button mdl-button--primary"> Valider </a>
+                <a href="{{ path('app_front_degustation_refuse_guest',{'uid':guest.uid}) }}" class="mdl-button mdl-js-button mdl-button--primary"> Refuser </a>
+                <br>
+            {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -12,6 +12,9 @@
   color: white;
   text-decoration: none;
 }
+.padding-body {
+  padding-top: 8vh;
+}
 .mdl-layout__header-row .mdl-navigation__link {
   color: #ffffff;
 }

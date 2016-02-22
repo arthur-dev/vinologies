@@ -1,10 +1,69 @@
 {% extends 'AppFrontBundle:Layout:Layout.html.twig' %}
 
 {% block content %}
+    <div class="padding-body" style="padding-top: 8vh;">
+        <div class="row">
+            <div class="col-md-offset-4 col-md-4">
 
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br>
-{{ form(form) }}
+                <h3 class="center_text">Ajouter une dégustation</h3>
+
+                {{ form_start(form) }}
+                {{ form_errors(form) }}
+
+
+
+                <div class="center_img mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    {{ form_label(form.description,"Description", {'label_attr': {'class': 'mdl-textfield__label'}}) }}
+                    {{ form_widget(form.description, {'attr': {'class': 'mdl-textfield__input'}}) }}
+                    {{ form_errors(form.description) }}
+                </div>
+
+                <div class="center_img mdl-textfield mdl-js-textfield mdl-textfield--floating-label ">
+                    {{ form_label(form.maxGuestNumber,"Nombre d'invité", {'label_attr': {'class': 'mdl-textfield__label'}}) }}
+                    {{ form_widget(form.maxGuestNumber, {'attr': {'class': 'mdl-textfield__input'}}) }}
+                    {{ form_errors(form.maxGuestNumber) }}
+                </div>
+
+
+                <div class="center_img mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    {{ form_label(form.address.street,"Adresse", {'label_attr': {'class': 'mdl-textfield__label'}}) }}
+                    {{ form_widget(form.address.street, {'attr': {'class': 'mdl-textfield__input'}}) }}
+                    {{ form_errors(form.address.street) }}
+                </div>
+
+                <div class="center_img mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    {{ form_label(form.address.postalCode,"Code postal", {'label_attr': {'class': 'mdl-textfield__label'}}) }}
+                    {{ form_widget(form.address.postalCode, {'attr': {'class': 'mdl-textfield__input'}}) }}
+                    {{ form_errors(form.address.postalCode) }}
+                </div>
+
+                <div class="center_img mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    {{ form_label(form.address.city,"Ville", {'label_attr': {'class': 'mdl-textfield__label'}}) }}
+                    {{ form_widget(form.address.city, {'attr': {'class': 'mdl-textfield__input'}}) }}
+                    {{ form_errors(form.address.city) }}
+                </div>
+
+                <div class="center_img mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    {{ form_label(form.address.complement,"Complement", {'label_attr': {'class': 'mdl-textfield__label'}}) }}
+                    {{ form_widget(form.address.complement, {'attr': {'class': 'mdl-textfield__input'}}) }}
+                    {{ form_errors(form.address.complement) }}
+                </div>
+
+                <div class="center_img ">
+                    {{ form_label(form.hours,"Date", {'label_attr': {'class': ''}}) }}
+                    {{ form_widget(form.hours, {'attr': {'class': ''}}) }}
+                    {{ form_errors(form.hours) }}
+                </div>
+
+
+                {{ form_row(form.save, {'attr': {'class': 'center_img mdl-button mdl-js-button mdl-button--primary'}}) }}
+
+                {{ form_end(form) }}
+
+
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
