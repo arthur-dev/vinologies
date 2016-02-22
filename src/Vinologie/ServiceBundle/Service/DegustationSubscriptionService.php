@@ -10,6 +10,7 @@
 namespace Vinologie\ServiceBundle\Service;
 
 use Doctrine\ORM\EntityManager;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpKernel\Debug\TraceableEventDispatcher;
 use Vinologie\ServiceBundle\Entity\Degustation;
 use Vinologie\ServiceBundle\Entity\Guest;
@@ -23,11 +24,11 @@ class DegustationSubscriptionService
     protected $em;
 
     /**
-     * @var EventDispatcher
+     * @var EventDispatcherInterface
      */
     protected $ed;
 
-    public function __construct(EntityManager $em, TraceableEventDispatcher $ed)
+    public function __construct(EntityManager $em, EventDispatcherInterface $ed)
     {
         $this->em = $em;
         $this->ed = $ed;
