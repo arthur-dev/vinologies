@@ -1,4 +1,4 @@
-
+#!/bin/bash
 
 
 #php bin/console doctrine:database:drop --force
