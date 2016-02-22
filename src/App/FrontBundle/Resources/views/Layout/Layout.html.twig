@@ -7,11 +7,11 @@
         {% stylesheets %}
         {#<link rel="stylesheet" href="{{ asset_url }}" />#}
         {% endstylesheets %}
-        <link rel="stylesheet" href="{{ asset('public/mdl/material.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('public/materialMaison/material.min.css') }}" />
         <link rel="stylesheet" href="{{ asset('public/bootstrapMaison/css/bootstrap.min.css') }}" />
         {#//TODO enlever en prod,compilation auto du less #}
         <link rel="stylesheet/less" type="text/css" href="{{ asset('public/style/main.less') }}" />
-        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
     {% endblock %}
 
     {% block js %}
@@ -58,6 +58,7 @@
 {% block content %}
 
 {% endblock %}
+
 
 </body>
 </html>

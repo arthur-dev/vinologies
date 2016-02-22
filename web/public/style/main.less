@@ -3,19 +3,58 @@
 @import (less) 'header.css';
 @import (less) 'utils.css';
 
+@redflat : rgb(190, 49, 73) ;
+@grisflat : #7f8c8d ;
 
-body{
-  margin-top:2200px;
-  padding-top: 100px;
-  font-family: 'Roboto', sans-serif;
+.header{
+  height: 8vh;
+  width:100vw;
+  position:fixed;
+  background-color: rgba(190, 49, 73,1);
+  z-index: 2000;
+
+  a{
+    color:white;
+  }
+  a:hover{
+    color:white;
+    text-decoration: none;
+  }
 }
 
+body{
+color:@grisflat;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+h1{
+  font-size: 40px;
+
+}
 .paddingTop
 {
 padding-top: 30px;
 }
 
+.buttonlike{
+  width:25%;
+  border-radius: 0px;
+  border: 1px solid white;
+  color: white;
+  padding: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 30px;
 
+}
+
+.buttonlike:hover{
+  border: 1px solid white;
+  background-color: white;
+  color:@redflat
+
+}
 
 
 
